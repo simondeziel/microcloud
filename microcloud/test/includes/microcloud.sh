@@ -973,7 +973,7 @@ setup_system() {
 
   # Create a snapshot so we can restore to this point.
   if [ "${SNAPSHOT_RESTORE}" = 1 ]; then
-    echo "::warning:: ==> XXX: working around LXD shutdown bug"
+    echo "::warning::==> working around LXD shutdown bug (https://github.com/canonical/microcloud/pull/286)"
     lxc exec "${name}" -- systemctl stop snap.lxd.daemon.service snap.lxd.daemon.unix.socket
 
     lxc stop "${name}"
